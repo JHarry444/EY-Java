@@ -4,9 +4,9 @@ package com.qa.objects;
 public class Cat {
 
     // has 3 'fields' or values
-    String name;
-    int age;
-    String colour;
+    private String name;
+    private int age;
+    private String colour;
 
     public Cat() {
         // default constructor
@@ -14,9 +14,37 @@ public class Cat {
     }
 
     public Cat(String name, int age, String colour) {
+        this.setName(name);
+        this.setAge(age);
+        this.setColour(colour);
+    }
+
+    public void setAge(int age) {
+        if (age >= 0 && age < 30) {
+            this.age = age;
+        } else {
+            System.out.println("Invalid age: " + age);
+        }
+    }
+
+    public void setName(String name) {
         this.name = name;
-        this.age = age;
+    }
+
+
+    public String getName() {
+        return this.name;
+    }
+
+    public int getAge() {
+        return this.age;
+    }
+
+    public void setColour(String colour) {
         this.colour = colour;
     }
 
+    public String getColour() {
+        return colour;
+    }
 }
