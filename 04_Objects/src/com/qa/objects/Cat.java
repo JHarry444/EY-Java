@@ -47,4 +47,11 @@ public class Cat {
     public String getColour() {
         return colour;
     }
+
+    // toString -> creates a String representation of an object
+    public String toString() {
+        return "Name: " + this.getName() + " Age: " + this.getAge() + " Colour: " + this.getColour();
+    }
+
+
 }

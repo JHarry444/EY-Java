@@ -1,17 +1,19 @@
-package com.qa.objects;
+package com.qa.objects.pets;
 
-public class App {
+import com.qa.objects.Calculator;
 
+public class App extends Object {
 
     public static void main(String[] args) {
-        // start
+        Dog dog = new Dog();
 
-        // Strings get special treatment and don't require 'new'
-        // technically called a string literal
-        String myName = "Jordan";
-        String myName2 = new String("Jordan");
+        dog.setName("Fido");
+        dog.setAge(12);
+        dog.setColour("Blonde");
 
-        Cat cat1 = new Cat();
+        System.out.println(dog.toString());
+
+        com.qa.objects.Cat cat1 = new com.qa.objects.Cat();
         // . syntax
         cat1.setName("Felix");
 
@@ -34,7 +36,10 @@ public class App {
         System.out.println(cat3.toString());
         System.out.println(cat4);
 
-//        cat4.breed = "Russian Shorthair";
+        System.out.println(dog.getClass());
+        System.out.println(cat1.getClass());
 
+        System.out.println(new Calculator().toString());
+        System.out.println(new Calculator().getClass());
     }
 }
