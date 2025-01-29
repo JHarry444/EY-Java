@@ -1,4 +1,4 @@
-package com.qa.objects.pets;
+package com.qa.collections.models;
 
 public abstract class Pet extends Object {
 

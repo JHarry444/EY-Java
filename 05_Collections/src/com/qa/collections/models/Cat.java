@@ -1,4 +1,4 @@
-package com.qa.objects.pets;
+package com.qa.collections.models;
 
 // new type called 'Cat'
 public class Cat extends Pet {

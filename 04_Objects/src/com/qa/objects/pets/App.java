@@ -41,5 +41,17 @@ public class App extends Object {
 
         System.out.println(new Calculator().toString());
         System.out.println(new Calculator().getClass());
+
+        System.out.println(new Cat().makeNoise());
+        System.out.println(new Dog().makeNoise());
+
+//        Pet p = new Pet(); can't instantiate an abstract class
+        Pet d = new Dog();
+        System.out.println("Dog: " + d.makeNoise());
+        Pet c = new Cat();
+        System.out.println("Cat: " + c.makeNoise());
+        Pet b = new Bird();
+        System.out.println("Bird: " + b.makeNoise());
+
     }
 }
