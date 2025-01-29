@@ -1,5 +1,7 @@
 package com.qa.collections.models;
 
+import java.util.Objects;
+
 // new type called 'Cat'
 public class Cat extends Pet {
 
@@ -39,6 +41,18 @@ public class Cat extends Pet {
     @Override
     public String makeNoise() {
         return "MEOW";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Cat cat = (Cat) o;
+        return indoor == cat.indoor;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getAge(), getColour(), indoor);
     }
 
     @Override

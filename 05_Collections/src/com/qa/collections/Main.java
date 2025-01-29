@@ -3,6 +3,8 @@ package com.qa.collections;
 import com.qa.collections.models.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -70,7 +72,57 @@ public class Main {
         System.out.println(numberList);
 
 
+        HashSet<String> nameSet = new HashSet<>();
+        System.out.println("NameSet: " + nameSet);
+        nameSet.add("Jordan");
+        nameSet.add("Jordan");
+
+        nameSet.add("Piers");
+        nameSet.add("Shafeeq");
+        System.out.println("NameSet: " + nameSet);
 
 
+        HashSet<Cat> catSet = new HashSet<>();
+        System.out.println("CatSet: " + catSet);
+
+        Cat cat1 = new Cat("Tiddles", 12, "Blue");
+        Cat cat2 = new Cat("Garfield", 22, "Ginger");
+        Cat cat3 = new Cat("Tiddles", 12, "Blue");
+
+        catSet.add(cat1);
+        System.out.println("CAT1: " + cat1.hashCode());
+
+        catSet.add(cat2);
+        System.out.println("CAT2: " + cat2.hashCode());
+
+        catSet.add(cat3);
+        System.out.println("CAT3: " + cat3.hashCode());
+
+        System.out.println("CatSet: " + catSet);
+
+
+        HashMap<Trainer, Pet> trainerMap = new HashMap<>();
+
+
+        trainerMap.put(
+                new Trainer("Jordan H", 30, "Muppetry"),
+                new Cat("Garfield", 34, "Ginger")
+        );
+
+        trainerMap.put(
+                new Trainer("Piers", 28, "Advanced Muppetry"),
+                new Dog("Stephen", 3, "Brown")
+        );
+
+        trainerMap.put(
+                new Trainer("Cameron", 31, "Web"),
+                new Dog("Milo", 4, "Brown")
+        );
+
+        System.out.println("Trainers: " + trainerMap);
+
+        System.out.println("Cameron's pet: " + trainerMap.get(new Trainer("Cameron", 31, "Web")));
+
+        System.out.println(trainerMap.keySet());
     }
 }

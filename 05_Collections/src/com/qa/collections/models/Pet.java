@@ -1,5 +1,7 @@
 package com.qa.collections.models;
 
+import java.util.Objects;
+
 public abstract class Pet extends Object {
 
     // instance variables -> the value changes between each 'instance'
@@ -44,6 +46,17 @@ public abstract class Pet extends Object {
 
     public abstract String makeNoise();
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Pet pet = (Pet) o;
+        return age == pet.age && Objects.equals(name, pet.name) && Objects.equals(colour, pet.colour);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, colour);
+    }
 
     @Override
     public String toString() {
